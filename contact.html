@@ -32,7 +32,8 @@
   "url": "https://www.tsvishnu.com/contact.html",
   "image": "https://www.tsvishnu.com/3.jpeg",
   "jobTitle": "Music Director, Composer, Music Producer and Playback Singer",
-  "email": "mailto:hello@tsvishnu.com",
+  "email": "mailto:tsvishnu@castle7records.com",
+  "telephone": "+91-9947390072",
   "address": { "@type": "PostalAddress", "addressRegion": "Kerala", "addressCountry": "IN" },
   "sameAs": [
     "https://www.imdb.com/name/nm7837206/",
@@ -138,33 +139,44 @@
 </nav>
 
 <section class="section" style="padding-top: 9rem;">
-  <span class="eyebrow reveal">Contact</span>
   <h1 class="section-title reveal">Let's work together.</h1>
 
   <div class="contact-grid" style="margin-top: 3.5rem;">
-    <div class="contact-form-box reveal">
-      <form class="contact-form" id="contactForm">
-        <div class="field">
-          <input type="text" id="name" name="name" placeholder=" " required>
-          <label for="name">Name</label>
-        </div>
-        <div class="field">
-          <input type="email" id="email" name="email" placeholder=" " required>
-          <label for="email">Email</label>
-        </div>
-        <div class="field">
-          <textarea id="message" name="message" rows="4" placeholder=" " required></textarea>
-          <label for="message">Message</label>
-        </div>
-        <button type="submit" class="btn btn-solid" style="align-self: flex-start;">Send</button>
-      </form>
+    <div class="contact-direct reveal">
+      <p class="contact-intro">Please get in touch for press, film scoring, advertising and booking enquiries.</p>
+      <h3>Email</h3>
+      <a href="mailto:tsvishnu@castle7records.com">tsvishnu@castle7records.com</a>
+      <h3>Contact Number</h3>
+      <a href="tel:+919947390072">+91 99473 90072</a>
     </div>
 
-    <div class="contact-direct reveal">
-      <h3>Email</h3>
-      <a href="mailto:hello@tsvishnu.com">hello@tsvishnu.com</a>
-      <h3>Phone / WhatsApp</h3>
-      <a href="tel:+910000000000">+91 00000 00000</a>
+    <div class="contact-form-box reveal">
+      <form class="contact-form" id="contactForm">
+        <div class="field-group-label">Name</div>
+        <div class="field-row">
+          <div class="field-boxed">
+            <label for="firstName">First Name <span class="req">(required)</span></label>
+            <input type="text" id="firstName" name="firstName" required>
+          </div>
+          <div class="field-boxed">
+            <label for="lastName">Last Name <span class="req">(required)</span></label>
+            <input type="text" id="lastName" name="lastName" required>
+          </div>
+        </div>
+        <div class="field-boxed">
+          <label for="email">Email <span class="req">(required)</span></label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="field-boxed">
+          <label for="phone">Phone <span class="req">(required)</span></label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        <div class="field-boxed">
+          <label for="message">Message <span class="req">(required)</span></label>
+          <textarea id="message" name="message" rows="5" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-solid" style="align-self: flex-start;">Submit</button>
+      </form>
     </div>
   </div>
 </section>

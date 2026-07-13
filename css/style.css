@@ -695,52 +695,62 @@ input, textarea { font-family: inherit; }
   flex-direction: column;
   gap: 2rem;
 }
-.field { position: relative; }
-.field input, .field textarea {
-  width: 100%;
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(245,244,241,0.25);
-  padding: 0.6rem 0;
-  font-size: 1rem;
+.field-group-label {
+  font-family: var(--display);
+  font-size: 1.05rem;
   color: var(--white);
-  outline: none;
-  resize: none;
-  transition: border-color 0.3s var(--ease);
+  text-transform: none;
 }
-.field input:focus, .field textarea:focus { border-color: var(--accent); }
-.field label {
-  position: absolute;
-  left: 0; top: 0.6rem;
-  font-size: 1rem;
+.field-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.6rem;
+}
+@media (min-width: 560px) {
+  .field-row { grid-template-columns: 1fr 1fr; }
+}
+.field-boxed label {
+  display: block;
+  font-size: 0.95rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.field-boxed .req {
+  font-size: 0.85rem;
   color: var(--muted);
-  pointer-events: none;
-  transition: transform 0.3s var(--ease), font-size 0.3s var(--ease), color 0.3s var(--ease);
+  font-weight: 400;
 }
-.field input:focus + label,
-.field input:not(:placeholder-shown) + label,
-.field textarea:focus + label,
-.field textarea:not(:placeholder-shown) + label {
-  transform: translateY(-1.4rem);
-  font-size: 0.75rem;
-  color: var(--accent);
-}
-.contact-direct {
-  justify-self: end;
-  align-self: start;
-  margin-right: 1rem;
+.field-boxed input,
+.field-boxed textarea {
   width: 100%;
-  max-width: 440px;
-  background: var(--accent);
+  background: #c9c7c0;
+  border: 1px solid rgba(10,10,10,0.15);
+  border-radius: 2px;
+  padding: 0.85rem 1rem;
+  font-size: 1rem;
+  font-family: var(--sans);
   color: var(--black);
-  padding: 3rem 2.4rem;
-  border-radius: 10px;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+}
+.field-boxed input:focus,
+.field-boxed textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px rgba(242,183,5,0.25);
+}
+.contact-intro {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 40ch;
 }
 .contact-direct h3 {
   font-family: var(--display);
   font-size: 0.9rem;
   text-transform: uppercase;
-  color: rgba(10,10,10,0.6);
+  color: var(--muted);
   margin-bottom: 0.8rem;
   letter-spacing: 0.06em;
 }
@@ -749,7 +759,7 @@ input, textarea { font-family: inherit; }
   font-family: var(--display);
   font-size: clamp(1.1rem, 2.4vw, 1.5rem);
   text-transform: none;
-  color: var(--black);
+  color: var(--accent);
   margin-bottom: 2.2rem;
   border-bottom: 1px solid transparent;
   transition: color 0.3s var(--ease);
