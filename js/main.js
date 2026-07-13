@@ -39,9 +39,18 @@
           }
         });
       },
-      { threshold: 0.15 }
+      { threshold: 0.05, rootMargin: "0px 0px -5% 0px" }
     );
     revealEls.forEach((el) => observer.observe(el));
+
+    // Safety net: never let content stay invisible if the observer misses
+    // an element (e.g. layout not settled yet on first paint).
+    window.addEventListener("load", () => {
+      setTimeout(() => {
+        revealEls.forEach((el) => el.classList.add("in-view"));
+        observer.disconnect();
+      }, 2500);
+    });
   }
 
   // ---------- Contact form ----------
